@@ -5,6 +5,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+/**
+ * Represents a smile that can be crying or laughing.
+ */
 @Entity
 public class Smile {
   @Id
