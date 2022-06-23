@@ -1,6 +1,9 @@
 package com.example.smileapp.smile;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
 public class Smile {
@@ -14,7 +17,7 @@ public class Smile {
   public Smile() {
   }
 
-  public Smile(Boolean isCrying, Boolean isLaughing) {
+  public Smile(final Boolean isCrying, final Boolean isLaughing) {
     this.isCrying = isCrying;
     this.isLaughing = isLaughing;
   }
