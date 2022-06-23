@@ -37,3 +37,6 @@ out/
 .vscode/
 
 .DS_Store
+
+# Dev credentials
+/config/application-dev.properties
