@@ -8,8 +8,8 @@ public class Smile {
   @GeneratedValue(strategy = GenerationType.AUTO)
   private Long id;
 
-  private Boolean isCrying;
-  private Boolean isLaughing;
+  private Boolean isCrying = false;
+  private Boolean isLaughing = true;
 
   public Smile() {
   }
@@ -35,6 +35,10 @@ public class Smile {
 
   public Boolean getLaughing() {
     return this.isLaughing;
+  }
+
+  public Long getId() {
+    return id;
   }
 
   @Override
