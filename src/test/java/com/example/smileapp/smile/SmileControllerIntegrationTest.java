@@ -47,4 +47,20 @@ public class SmileControllerIntegrationTest {
     Smile smile = repository.findFirstByOrderByIdAsc();
     assertEquals(false, smile.getCrying());
   }
+
+  @Test
+  void SmileGetSmileById() throws Exception {
+    Smile smile = repository.save(new Smile(false, true));
+
+    mvc.perform(
+        MockMvcRequestBuilders.get("/api/smiles/" + smile.getId())
+            .contentType(MediaType.APPLICATION_JSON))
+        .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
+        .andExpect(status().isOk())
+        .andExpect(jsonPath("$.crying").value(false));
+
+    Smile updatedSmile = repository.findById(smile.getId()).orElseThrow();
+
+    assertEquals(false, updatedSmile.getCrying());
+  }
 }
